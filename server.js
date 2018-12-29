@@ -20,10 +20,10 @@ app.get('/blogposts', (req, res) => {
       .then(posts => {
           console.log ()
           res.json(posts.map(post => {
-              console.log(post.author);
+              console.log(post.title);
               return {
                 id: post._id,
-                author: post.author,
+                //author: post.author,
                 content: post.content,
                 title: post.title,
                 created: post.created,
@@ -34,6 +34,17 @@ app.get('/blogposts', (req, res) => {
       .catch(err => {
           console.error(err);
           res.status(500).json({error:  'there is something wrong with this GET request'});
+      });
+});
+
+//GET request to /blogposts by ID
+app.get("/blogposts/:id", (req, res) => {
+    BlogPost
+      .findById(req.params.id)
+      .then(blogpost => res.json(blogpost.serialize()))
+      .catch(err => {
+          console.error(err);
+          res.status(500).json({message: "there is something wrong with GET by ID request"});
       });
 });
 

@@ -22,6 +22,17 @@ const blogpostSchema = mongoose.Schema({
     }
 });
 
+blogpostSchema.methods.serialize = function() {
+    return {
+        id:this._id,
+        //author: this.firstName,
+        content: this.content,
+        title: this.title,
+        created: this.created,
+        comments: this.comments
+    };
+};
+
 
 const BlogPost = mongoose.model("Blogpost", blogpostSchema);
 
