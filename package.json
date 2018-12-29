@@ -1,8 +1,7 @@
 {
   "name": "blogapp-final",
   "version": "1.0.0",
-  "description": "",
-  "main": "config.js",
+  "description": "Final version of the blog app",
   "scripts": {
     "test": "test",
     "start": "node server.js"
@@ -18,6 +17,7 @@
   },
   "homepage": "https://github.com/MissyM2/blogapp-final#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongoose": "^5.4.1"
   }
 }
