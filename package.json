@@ -1,0 +1,20 @@
+{
+  "name": "blogapp-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MissyM2/blogapp-final.git"
+  },
+  "author": "Missy Maloney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MissyM2/blogapp-final/issues"
+  },
+  "homepage": "https://github.com/MissyM2/blogapp-final#readme"
+}
