@@ -36,14 +36,14 @@ const blogpostSchema = mongoose.Schema({
 });
 
 blogpostSchema.pre('find', function(next) {
-    this.populate('author');
+    this.populate('authors');
     next();
 });
 
 blogpostSchema.methods.serialize = function() {
     return {
         id:this._id,
-        //author: this.firstName,
+        author: this.firstName,
         content: this.content,
         title: this.title,
         created: this.created,
@@ -53,5 +53,6 @@ blogpostSchema.methods.serialize = function() {
 
 
 const BlogPost = mongoose.model("Blogpost", blogpostSchema);
+const Author = mongoose.model("Author", authorSchema);
 
 module.exports = {BlogPost, Author};
