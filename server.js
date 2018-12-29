@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const {PORT, DATABASE_URL} = require('./config');
-const {BlogPost} = require('./models');
+const {BlogPost, Author} = require('./models');
 
 const app = express();
 app.use(express.json());
@@ -19,18 +19,8 @@ app.get('/blogposts', (req, res) => {
       .find()
       .then(posts => {
           console.log ()
-          res.json(posts.map(post => {
-              console.log(post.title);
-              return {
-                id: post._id,
-                //author: post.author,
-                content: post.content,
-                title: post.title,
-                created: post.created,
-                comments: post.comments
-            };
-        }));
-      })
+          res.json(posts.map(blogpost => res.json(blogpost.serialize()))
+      )})
       .catch(err => {
           console.error(err);
           res.status(500).json({error:  'there is something wrong with this GET request'});
