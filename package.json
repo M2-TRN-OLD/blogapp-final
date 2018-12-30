@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Final version of the blog app",
   "scripts": {
-    "test": "test",
+    "test": "mocha --exit",
     "start": "node server.js"
   },
   "repository": {
@@ -19,5 +19,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
   }
 }
