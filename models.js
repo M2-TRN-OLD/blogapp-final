@@ -21,6 +21,10 @@ const commentSchema = mongoose.Schema({
 });
 
 const blogpostSchema = mongoose.Schema({
+    author: {
+        firstName: String,
+        lastName: String,
+    },
     title: String,
     content: String,
     //author: [authorSchema],
