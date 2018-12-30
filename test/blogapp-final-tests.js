@@ -19,6 +19,7 @@ describe("Blog Posts", function() {
     it("should list items on GET", function() {
         return chai
             .request(app)
+            .get('/blogposts')
             .then(function(res) {
                 expect(res).to.have.status(200);
                 expect(res).to.be.json;
@@ -31,9 +32,10 @@ describe("Blog Posts", function() {
                         "title",
                         "content",
                         "author",
-                        "created",
+                        //"created",
                         "comments"  
                     );
+                    done();
                 });
             });
     });
